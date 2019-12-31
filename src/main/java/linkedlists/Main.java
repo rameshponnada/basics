@@ -8,6 +8,7 @@ public class Main {
         list.insertAtEnd(20);
         list.insertAtEnd(30);
         list.insertAtEnd(40);
+        list.deleteFirst();
         System.out.println(list.contains(30));
 
     }

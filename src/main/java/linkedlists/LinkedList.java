@@ -47,9 +47,22 @@ public class LinkedList {
     }
 
     // deleteFirst
+    public void deleteFirst(){
+        // 10 -> 20 -> 30
+        if(isEmpty()){
+            throw  new NoSuchElementException();
+        }
+        if(head == tail){
+            head= tail =null;
+            return;
+        }
+        Node second = head.next;
+        head.next =null;
+        head = second;
+    }
+
     // deleteLast
     // contains
-
     public boolean contains(int val){
         return indexOf(val)!=-1;
     }
