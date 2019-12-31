@@ -1,20 +1,63 @@
 package linkedlists;
 
+import java.util.NoSuchElementException;
+
 public class LinkedList {
 
     private Node head;
     private Node tail;
     private int size;
 
-    // insertAtEnd
-    public void insertAtEnd(int val){
-        // see whats tail
-
+    // insertFirst
+    // head -> 10 -> tail
+    public void insertAtFirst(int val) {
+        Node node = new Node(val);
+        if(isEmpty()){
+            head=tail = node;
+        }else{
+            node.next = head;
+            head=node;
+        }
     }
 
-    // remove
-    // size
+    // insertAtEnd
+    // head->10->20->30->tail.
+    public void insertAtEnd(int val) {
+        Node node = new Node(val);
+        if (isEmpty()) { // List is empty
+            head = tail = node;
+        } else {
+            tail.next = node;
+            tail = node;
+        }
+    }
 
+    // indexOf
+    public int indexOf(int val){
+        int index =0;
+        Node current = head;
+        while(current!=null){
+            if(current.value==val){
+                return index;
+            }
+            current= current.next;
+            index++;
+        }
+        return -1;
+    }
+
+    // deleteFirst
+    // deleteLast
+    // contains
+
+    public boolean contains(int val){
+        return indexOf(val)!=-1;
+    }
+
+
+    private boolean isEmpty(){
+        return head ==null;
+    }
 
     class Node {
         int value;
@@ -22,7 +65,6 @@ public class LinkedList {
 
         Node(int value) {
             this.value = value;
-            next = null;
         }
     }
 
