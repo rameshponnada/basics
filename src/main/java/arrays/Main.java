@@ -15,7 +15,5 @@ public class Main {
         a.remove(20);
         a.print();
         System.out.println(a.getSize());
-
-
     }
 }
