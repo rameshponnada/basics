@@ -91,12 +91,41 @@ public class LinkedList {
         return indexOf(val) != -1;
     }
 
+    // reverse
+    public void reverse() {
+        if(isEmpty()){
+            return;
+        }
+        Node previous = head;
+        Node current = head.next;
+
+        while(current!=null){
+            Node next = current.next;
+            current.next = previous;
+            previous =current;
+            current = next;
+        }
+        tail =  head;
+        tail.next=null;
+        head = previous;
+    }
+
     public int length() {
         return size;
     }
 
     private boolean isEmpty() {
         return head == null;
+    }
+    public int[] toArray() {
+        int[] arr = new int[size];
+        Node current = head;
+        int index = 0;
+        while (current!=null){
+            arr[index++] = current.value;
+            current = current.next;
+        }
+         return arr;
     }
 
     class Node {
@@ -105,6 +134,11 @@ public class LinkedList {
 
         Node(int value) {
             this.value = value;
+        }
+
+        @Override
+        public String toString() {
+            return "{" + value  +" -->" +next +"}";
         }
     }
 
