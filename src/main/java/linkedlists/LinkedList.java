@@ -12,11 +12,11 @@ public class LinkedList {
     // head -> 10 -> tail
     public void insertAtFirst(int val) {
         Node node = new Node(val);
-        if(isEmpty()){
-            head=tail = node;
-        }else{
+        if (isEmpty()) {
+            head = tail = node;
+        } else {
             node.next = head;
-            head=node;
+            head = node;
         }
     }
 
@@ -33,43 +33,71 @@ public class LinkedList {
     }
 
     // indexOf
-    public int indexOf(int val){
-        int index =0;
+    public int indexOf(int val) {
+        int index = 0;
         Node current = head;
-        while(current!=null){
-            if(current.value==val){
+        while (current != null) {
+            if (current.value == val) {
                 return index;
             }
-            current= current.next;
+            current = current.next;
             index++;
         }
         return -1;
     }
 
     // deleteFirst
-    public void deleteFirst(){
+    public void deleteFirst() {
         // 10 -> 20 -> 30
-        if(isEmpty()){
-            throw  new NoSuchElementException();
+        if (isEmpty()) {
+            throw new NoSuchElementException();
         }
-        if(head == tail){
-            head= tail =null;
+        if (head == tail) {
+            head = tail = null;
             return;
         }
         Node second = head.next;
-        head.next =null;
+        head.next = null;
         head = second;
     }
 
     // deleteLast
+    public void deleteLast() {
+        // 10 -> 20 -> 30
+        // need to remove 30, So tail will point to 20 so we need a reference to 20
+        //
+
+        if (isEmpty()) {
+            throw new NoSuchElementException();
+        }
+        if (head == tail) {
+            head = tail = null;
+            return;
+        }
+
+        Node lastButOne = getPrevious(tail);
+        tail = lastButOne;
+        tail.next = null;
+    }
+
+    private Node getPrevious(Node node) {
+        Node current = head;
+        while (current != null) {
+            if (current.next == node) return current;
+            else
+                current = current.next;
+        }
+        return null;
+    }
+
     // contains
-    public boolean contains(int val){
-        return indexOf(val)!=-1;
+    public boolean contains(int val) {
+        return indexOf(val) != -1;
     }
 
 
-    private boolean isEmpty(){
-        return head ==null;
+    private boolean isEmpty() {
+        return head == null;
     }
 
     class Node {
