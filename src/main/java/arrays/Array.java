@@ -6,9 +6,6 @@ public class Array {
 
     private int[] data;
     private int count;
-    //insert
-    //remove
-    //indexof
 
     public Array(int initialSize) {
         data = new int[initialSize];
@@ -50,13 +47,13 @@ public class Array {
 
     public void remove(int number) {
         int index = indexOf(number);
-        if(index>=0) {
-            for (int i = index; i < count; i++){
+        if (index >= 0) {
+            for (int i = index; i < count; i++) {
 //                System.out.print("i:: "+ i  +" data[i] ::" +data[i] +" data[i+1:: " + data[i+1] +" \n");
-                data[i] = data[i+1];
+                data[i] = data[i + 1];
             }
-                count--;
-        }else {
+            count--;
+        } else {
             throw new NoSuchElementException();
         }
     }

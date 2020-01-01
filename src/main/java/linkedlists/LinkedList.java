@@ -9,7 +9,6 @@ public class LinkedList {
     private int size;
 
     // insertFirst
-    // head -> 10 -> tail
     public void insertAtFirst(int val) {
         Node node = new Node(val);
         if (isEmpty()) {
@@ -21,7 +20,6 @@ public class LinkedList {
     }
 
     // insertAtEnd
-    // head->10->20->30->tail.
     public void insertAtEnd(int val) {
         Node node = new Node(val);
         if (isEmpty()) { // List is empty
@@ -48,7 +46,6 @@ public class LinkedList {
 
     // deleteFirst
     public void deleteFirst() {
-        // 10 -> 20 -> 30
         if (isEmpty()) {
             throw new NoSuchElementException();
         }
@@ -63,10 +60,6 @@ public class LinkedList {
 
     // deleteLast
     public void deleteLast() {
-        // 10 -> 20 -> 30
-        // need to remove 30, So tail will point to 20 so we need a reference to 20
-        //
-
         if (isEmpty()) {
             throw new NoSuchElementException();
         }
