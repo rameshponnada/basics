@@ -8,14 +8,12 @@ public class Main {
         list.insertAtEnd(20);
         list.insertAtEnd(30);
         list.insertAtEnd(40);
-        System.out.println(list.contains(30));
-        System.out.println(list.contains(40));
+        System.out.println(list.length());
         list.deleteLast();
-        System.out.println(list.contains(30));
-        System.out.println(list.contains(40));
         list.deleteLast();
-        System.out.println(list.contains(30));
-        System.out.println(list.contains(40));
+        System.out.println(list.length());
 
+        list.deleteLast();
+        System.out.println(list.length());
     }
 }

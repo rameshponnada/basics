@@ -17,6 +17,7 @@ public class LinkedList {
             node.next = head;
             head = node;
         }
+        size++;
     }
 
     // insertAtEnd
@@ -28,6 +29,7 @@ public class LinkedList {
             tail.next = node;
             tail = node;
         }
+        size++;
     }
 
     // indexOf
@@ -51,11 +53,12 @@ public class LinkedList {
         }
         if (head == tail) {
             head = tail = null;
-            return;
+        } else {
+            Node second = head.next;
+            head.next = null;
+            head = second;
         }
-        Node second = head.next;
-        head.next = null;
-        head = second;
+        size--;
     }
 
     // deleteLast
@@ -65,12 +68,12 @@ public class LinkedList {
         }
         if (head == tail) {
             head = tail = null;
-            return;
+        } else {
+            Node lastButOne = getPrevious(tail);
+            tail = lastButOne;
+            tail.next = null;
         }
-
-        Node lastButOne = getPrevious(tail);
-        tail = lastButOne;
-        tail.next = null;
+        size--;
     }
 
     private Node getPrevious(Node node) {
@@ -88,6 +91,9 @@ public class LinkedList {
         return indexOf(val) != -1;
     }
 
+    public int length() {
+        return size;
+    }
 
     private boolean isEmpty() {
         return head == null;
