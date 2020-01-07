@@ -149,6 +149,23 @@ public class LinkedList {
         return arr;
     }
 
+
+    public String middle(){
+        if (isEmpty())
+            throw new IllegalStateException();
+        Node a = head, b = head;
+        while(b!=tail && b.next!=tail){
+            b= b.next.next;
+            a=a.next;
+        }
+
+        if(b==tail){
+            return a.value+"";
+        }   else{
+            return a.value +" , " +a.next.value;
+        }
+    }
+
     class Node {
         int value;
         Node next;
