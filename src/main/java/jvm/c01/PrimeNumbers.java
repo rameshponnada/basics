@@ -2,16 +2,14 @@ package jvm.c01;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.IntStream;
 
 public class PrimeNumbers {
 
 	private List<Integer> primes;
 	
 	private Boolean isPrime(Integer testNumber) {
-		for (int i = 2; i < testNumber; i++) {
-			if (testNumber % i == 0) return false;
-		}
-		return true;
+		return IntStream.range(2, testNumber).noneMatch(i -> testNumber % i == 0);
 	}
 	
 	private Integer getNextPrimeAbove(Integer previous) {

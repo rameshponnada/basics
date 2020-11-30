@@ -1,58 +1,60 @@
 package linkedlists;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 class LinkedListTest {
 
-    @org.junit.jupiter.api.BeforeEach
+    @BeforeEach
     void setUp() {
     }
 
-    @org.junit.jupiter.api.AfterEach
+    @AfterEach
     void tearDown() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void insertAtFirst() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void insertAtEnd() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void indexOf() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void deleteFirst() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void deleteLast() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void contains() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void reverse() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void getKthFromEnd() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void length() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void toArray() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void middle() {
     }
 }
